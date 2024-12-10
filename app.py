@@ -53,11 +53,9 @@ else:
     histnorm = None
 
 # create a plotly histogram figure
-fig = px.histogram(df_filtered,
+st.write(px.histogram(df_filtered,
                       x='price',
                       nbins=30,
                       color='manufacturer',
                       histnorm=histnorm,
-                      barmode='overlay')
-# display the figure with streamlit
-st.write(fig)
+                      barmode='overlay'))
