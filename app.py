@@ -24,6 +24,9 @@ st.header("Histogram of 'condition' vs 'model_year'")
 fig = px.histogram(df, x='model year', color='condition')
 st.write(fig)
 
+# histograms in plotly_express:
+st.write(px.histogram(df, x='model_year', color='condition'))
+
 # compare price distibution between manufacturers
 st.header('Compare price distribution between manufacturers')
 # get a list of car manufacturers
@@ -53,8 +56,7 @@ else:
     histnorm = None
 
 # create a plotly histogram figure
-st.write(px.histogram(df_filtered,
-                      x='price',
+st.write(px.histogram(df_filtered, x='price',
                       nbins=30,
                       color='manufacturer',
                       histnorm=histnorm,
