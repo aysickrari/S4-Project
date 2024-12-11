@@ -50,6 +50,32 @@ fig_year_hist = px.histogram(
 fig_year_hist.update_layout(xaxis_range=[1960, 2020])
 st.plotly_chart(fig_year_hist)
 
+# Scatterplot: Price vs Odometer
+st.subheader("Price vs Odometer")
+fig_price_odometer = px.scatter(
+    df, 
+    x='odometer', 
+    y='price',
+    labels={'odometer': 'Odometer (miles)', 'price': 'Price ($)'},
+    color='condition',
+    hover_data=['model', 'fuel'],
+    color_discrete_sequence=px.colors.qualitative.Set3
+)
+st.plotly_chart(fig_price_odometer)
+
+# Scatterplot: Price vs Model Year
+st.subheader("Price vs Model Year")
+fig_price_model_year = px.scatter(
+    df, 
+    x='model_year', 
+    y='price', 
+    labels={'model_year': 'Model Year', 'price': 'Price ($)'},
+    color='fuel',
+    hover_data=['model', 'transmission'],
+    color_discrete_sequence=px.colors.qualitative.Set3
+)
+st.plotly_chart(fig_price_model_year)
+
 # histogram distribution of vehicle types by the manufacturer
 st.header('Vehicle types by manufacturer')
 # create a plotly histogram figure
