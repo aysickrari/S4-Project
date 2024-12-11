@@ -8,6 +8,13 @@ df=pd.read_csv(r'C:/Users/joshu/OneDrive/Documents/S4Project/S4-Project/vehicles
 df = pd.read_csv('vehicles_us.csv')
 df['manufacturer'] = df['model'].apply(lambda x: x.split()[0])
 
+# Header for the Dashboard
+st.title("Car Advertisement Data Analysis")
+st.markdown("""
+This dashboard provides visual insights into the car advertisement data. 
+Below are some interactive histograms and scatterplots based on the dataset.
+""")
+
 # create a text header above the dataframe
 st.header('Data viewer') 
 # display the dataframe with streamlit
