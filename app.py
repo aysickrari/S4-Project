@@ -3,10 +3,10 @@ import streamlit as st
 import plotly.express as px
 import altair as alt
 
-df = pd.read_csv('/Users/joshu/Downloads/vehicles_us (1).csv')
-df['manufacturer'] = df['model'].apply(lambda x: x.split()[0])
+df=pd.read_csv('C:/Users/joshu/OneDrive/Documents/S4Project/S4-Project/vehicles_us.csv')
 
 df = pd.read_csv('vehicles_us.csv')
+df['manufacturer'] = df['model'].apply(lambda x: x.split()[0])
 
 # Header for the Dashboard
 st.title("Car Advertisement Data Analysis")
