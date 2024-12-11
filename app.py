@@ -76,6 +76,28 @@ fig_price_model_year = px.scatter(
 )
 st.plotly_chart(fig_price_model_year)
 
+# Histogram of Car Types
+st.subheader("Distribution of Car Types")
+fig_type_hist = px.histogram(
+    df, 
+    x='type',
+    labels={'type': 'Car Type'},
+    color='type',
+    color_discrete_sequence=px.colors.qualitative.Set3
+)
+st.plotly_chart(fig_type_hist)
+
+# Histogram of Days Listed
+st.subheader("Distribution of Days Listed")
+fig_days_listed_hist = px.histogram(
+    df, 
+    x='days_listed',
+    labels={'days_listed': 'Days Listed'},
+    nbins=30,
+    color_discrete_sequence=['pink']
+)
+st.plotly_chart(fig_days_listed_hist)
+
 # histogram distribution of vehicle types by the manufacturer
 st.header('Vehicle types by manufacturer')
 # create a plotly histogram figure
