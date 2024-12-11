@@ -20,6 +20,22 @@ st.header('Data viewer')
 # display the dataframe with streamlit
 st.dataframe(df)
 
+# histogram of prices by manufacturer
+st.subheader("Distribution of Car Prices")
+fig_manufacturer_hist = px.histogram(
+    df,
+    x='price',
+    color='manufacturer',
+    barmode='overlay',
+    title='Price Distribution by Manufacturer',
+    labels={'price': 'Price ($)', 'manufacturer': 'Manufacturer'},
+    nbins=50,
+    color_discrete_sequence=px.colors.qualitative.Set3
+)
+# Limit x-axis range to 100,000
+fig_manufacturer_hist.update_layout(xaxis_range=[0, 100000])
+st.plotly_chart(fig_manufacturer_hist)
+
 # histogram distribution of vehicle types by the manufacturer
 st.header('Vehicle types by manufacturer')
 # create a plotly histogram figure
