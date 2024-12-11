@@ -2,8 +2,12 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 import altair as alt
+import os
 
-df = pd.read_csv("C:/Users/joshu/OneDrive/Documents/S4Project/S4-Project/vehicles_us.csv")
+# Change the working directory to the root directory of your project
+os.chdir(r'C:\Users\joshu\OneDrive\Documents\S4Project\S4-Project')
+
+df = pd.read_csv('vehicles_us.csv')
 df['manufacturer'] = df['model'].apply(lambda x: x.split()[0])
 
 # Header for the Dashboard
